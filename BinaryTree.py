@@ -2,7 +2,17 @@
 """
 Created on Sat Mar  9 18:55:59 2019
 
-@author: owner
+@author: Shubham Joshi
+This class contains implementation of Binary tree
+usage:-
+ btree=BinaryTree([4,3,2,6,19,7,9,11,1])
+ btree.search_element(8)
+ print("inorder")
+ btree.print_inorder()
+ print("preorder")
+ btree.print_preorder()
+ print("postorder")
+ btree.print_postorder()
 """
 
 class Node:
@@ -61,34 +71,37 @@ class BinaryTree:
         return "Not Present"
     
     def print_inorder(self):        
+        trav=[]
         def traverse(node):
             if(node.get_left() is not None):
                 traverse(node.get_left())
                             
-            print(node.get_dataval())    
+            trav.append(node.get_dataval())    
             
             if(node.get_right() is not None):
                 traverse(node.get_right())
             
         traverse(self.__btree_start__)
+        return trav
         
-    def print_postorder(self):        
-        def traverse(node):            
-            
+    def print_postorder(self):     
+        trav=[]
+        def traverse(node):                        
             if(node.get_left() is not None):
                 traverse(node.get_left())
                         
             if(node.get_right() is not None):
                 traverse(node.get_right())
             
-            print(node.get_dataval())
+            trav.append(node.get_dataval())
             
         traverse(self.__btree_start__)
+        return trav
  
     def print_preorder(self):        
-        def traverse(node):
-            
-            print(node.get_dataval())
+        trav=[]
+        def traverse(node):            
+            trav.append(node.get_dataval())
             
             if(node.get_left() is not None):
                 traverse(node.get_left())
@@ -97,12 +110,5 @@ class BinaryTree:
                 traverse(node.get_right())
             
         traverse(self.__btree_start__)
-        
-btree=BinaryTree([4,3,2,6,19,7,9,11,1])
-btree.search_element(8)
-print("inorder")
-btree.print_inorder()
-print("preorder")
-btree.print_preorder()
-print("postorder")
-btree.print_postorder()
+        return trav
+
