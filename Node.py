@@ -21,3 +21,30 @@ class Node:
         
     def get_dataval(self):
         return self.__dataval__
+    
+
+    
+class Double_Linked_Node:
+    def __init__(self, dataval=None):
+        self.__dataval__ = dataval
+        self.__right__ = None
+        self.__left__ = None
+
+    def get_right(self):
+        return self.__right__
+
+    def get_left(self):
+        return self.__left__
+
+    def set_right(self,right):
+        self.__right__=right
+
+    def set_left(self,left):
+        self.__left__=left
+
+    def get_dataval(self):
+        return self.__dataval__
+
+    def set_dataval(self,dataval):
+        self.__dataval__=dataval
+        

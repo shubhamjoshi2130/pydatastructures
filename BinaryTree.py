@@ -15,11 +15,11 @@ usage:-
  btree.print_postorder()
 """
 
-from Node import Node
+from Node import Double_Linked_Node
     
 class BinaryTree:    
     def __init__(self,elem_lst):
-        self.__btree_start__=Node(elem_lst[0])
+        self.__btree_start__=Double_Linked_Node(elem_lst[0])
         
         for ele in elem_lst[1:len(elem_lst)]:            
             leaf=self.__btree_start__
@@ -31,7 +31,7 @@ class BinaryTree:
                 elif(leaf.get_dataval()>ele):
                     leaf_node=leaf
                     leaf=leaf.get_left()            
-            node=Node(ele)
+            node=Double_Linked_Node(ele)
             if(ele>leaf_node.get_dataval()):
                 leaf_node.set_right(node)
             elif(ele<leaf_node.get_dataval()):
